@@ -1,10 +1,12 @@
 //fila 2, asiento 9 , Carlos Dominguez
 package lab1p2_carlosdominguez;
+import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.Random;
 public class Lab1P2_CarlosDominguez {
     static Scanner sc = new Scanner(System.in);
     static Random rd = new Random();
+    static ArrayList medianas = new ArrayList();
     public static void main(String[] args) {
         System.out.println("--Mediana de medianas--");
         boolean vef = true;
@@ -34,6 +36,9 @@ public class Lab1P2_CarlosDominguez {
         System.out.println("");
         System.out.println("Matriz Ordenada : ");
         imprimir(matriz);
+        System.out.println("");
+        System.out.println("Calculo de Medianas :");
+        Calculo_Med(matriz);
     }
     
     //llenado de la matriz con random
@@ -75,5 +80,16 @@ public class Lab1P2_CarlosDominguez {
             Ordenamiento_filas(matriz,CR-1);
         }
         return matriz;
+    }
+    public static void Calculo_Med(int [][] matriz){
+        int media = matriz.length/2;
+        for (int i = 0; i < matriz.length; i++) {
+            for (int j = 0; j < matriz.length; j++){
+                if (j==media) {
+                    medianas.add(matriz[i][j]);
+                }
+            }
+        }
+        System.out.println(medianas);
     }
 }
