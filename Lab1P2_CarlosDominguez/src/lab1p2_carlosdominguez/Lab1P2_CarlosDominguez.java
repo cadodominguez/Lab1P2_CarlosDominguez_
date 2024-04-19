@@ -25,6 +25,11 @@ public class Lab1P2_CarlosDominguez {
         System.out.println("");
         System.out.println("Matriz Generada : ");
         imprimir(matriz);
+        // para el bubble sort me dio una idea 
+        //usar la recursiva para recorrer las filas de la matriz 
+        //y adentro del metodo hacer el swap para ordenar
+        
+        
     }
     
     //llenado de la matriz con random
