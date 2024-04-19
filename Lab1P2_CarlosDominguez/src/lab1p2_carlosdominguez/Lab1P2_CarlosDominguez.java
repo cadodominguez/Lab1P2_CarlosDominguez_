@@ -66,6 +66,7 @@ public class Lab1P2_CarlosDominguez {
         }
     }
     public static int [][] Ordenamiento_filas (int [][] matriz,int CR){
+        // CR es el controlador de la recursiva
         int [] arreglo_temp = new int [matriz.length];
         if (CR >= 0) {
             for (int i = 0; i < matriz.length; i++) {
