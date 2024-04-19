@@ -31,7 +31,9 @@ public class Lab1P2_CarlosDominguez {
         int control_recursiva = tamaño-1;
         // el -1 es para evitar que se salga de los bounds
         matriz = Ordenamiento_filas(matriz,control_recursiva);
-
+        System.out.println("");
+        System.out.println("Matriz Ordenada : ");
+        imprimir(matriz);
     }
     
     //llenado de la matriz con random
@@ -53,25 +55,23 @@ public class Lab1P2_CarlosDominguez {
     }
     public static int [][] Ordenamiento_filas (int [][] matriz,int CR){
         int [] arreglo_temp = new int [matriz.length];
-        if (CR != 0) {
+        if (CR >= 0) {
             for (int i = 0; i < matriz.length; i++) {
                 arreglo_temp [i] = matriz[CR][i];
             }
-            for (int i = 0; i < arreglo_temp.length; i++) {
-                for (int j = 0; j < arreglo_temp.length; j++) {
-                    if (arreglo_temp[j]>arreglo_temp[j+1]) {
-                        
+            for (int i = 0; i < arreglo_temp.length-1; i++) {
+                for (int j = 0; j < arreglo_temp.length-1; j++) {
+                    if (arreglo_temp[j] > arreglo_temp[j+1]) {
+                        int primero = arreglo_temp[j];
+                        int segundo = arreglo_temp[j+1];
+                        arreglo_temp[j]= segundo;
+                        arreglo_temp[j+1]= primero;
                     }
                 }
             }
-            /*for (int i = 0; i < matriz.length; i++) {
-                if (i != 0 && i != matriz.length) {
-                    if (matriz[CR][i]>matriz[CR][i]) {
-                        
-                    }
-                }
+            for (int i = 0; i < matriz.length; i++) {
+                matriz[CR][i]= arreglo_temp[i];
             }
-            */
             Ordenamiento_filas(matriz,CR-1);
         }
         return matriz;
