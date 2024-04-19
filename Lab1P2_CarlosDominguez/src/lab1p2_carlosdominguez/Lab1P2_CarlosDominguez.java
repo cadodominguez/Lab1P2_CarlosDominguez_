@@ -6,7 +6,7 @@ import java.util.Random;
 public class Lab1P2_CarlosDominguez {
     static Scanner sc = new Scanner(System.in);
     static Random rd = new Random();
-    static ArrayList medianas = new ArrayList();
+    static ArrayList <Integer> medianas = new ArrayList();
     public static void main(String[] args) {
         System.out.println("--Mediana de medianas--");
         boolean vef = true;
@@ -39,6 +39,9 @@ public class Lab1P2_CarlosDominguez {
         System.out.println("");
         System.out.println("Calculo de Medianas :");
         Calculo_Med(matriz);
+        System.out.println("");
+        System.out.println("Ordenamiento de Medianas : ");
+        Ordenamiento_media();
     }
     
     //llenado de la matriz con random
@@ -87,6 +90,19 @@ public class Lab1P2_CarlosDominguez {
             for (int j = 0; j < matriz.length; j++){
                 if (j==media) {
                     medianas.add(matriz[i][j]);
+                }
+            }
+        }
+        System.out.println(medianas);
+    }
+    public static void Ordenamiento_media(){
+        for (int i = 0; i < medianas.size()-1; i++) {
+            for (int j = 0; j < medianas.size()-1; j++) {
+                if (medianas.get(j)>medianas.get(j+1)) {
+                    int primero = medianas.get(j);
+                    int segundo = medianas.get(j+1);
+                    medianas.set(j, segundo);
+                    medianas.set(j+1, primero);
                 }
             }
         }
