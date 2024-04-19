@@ -100,6 +100,7 @@ public class Lab1P2_CarlosDominguez {
         System.out.println(medianas);
     }
     public static void Ordenamiento_media(){
+        // esta parte me costo por que la verdad no me acordaba de tocar los arraylists
         for (int i = 0; i < medianas.size()-1; i++) {
             for (int j = 0; j < medianas.size()-1; j++) {
                 if (medianas.get(j)>medianas.get(j+1)) {
