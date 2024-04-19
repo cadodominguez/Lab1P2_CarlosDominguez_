@@ -42,6 +42,10 @@ public class Lab1P2_CarlosDominguez {
         System.out.println("");
         System.out.println("Ordenamiento de Medianas : ");
         Ordenamiento_media();
+        System.out.println("");
+        System.out.println("Calculo de la mediana de medianas :");
+        med_de_med();
+        System.out.println("");
     }
     
     //llenado de la matriz con random
@@ -107,5 +111,10 @@ public class Lab1P2_CarlosDominguez {
             }
         }
         System.out.println(medianas);
+    }
+    public static void med_de_med(){
+        int med = medianas.size()/2;
+        int med_de_mediana = medianas.get(med);
+        System.out.println("Mediana de las medianas : " + med_de_mediana);
     }
 }
