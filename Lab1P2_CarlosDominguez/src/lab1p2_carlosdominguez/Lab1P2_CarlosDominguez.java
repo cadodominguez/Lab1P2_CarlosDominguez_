@@ -1,4 +1,4 @@
-
+//fila 2, asiento 9 , Carlos Dominguez
 package lab1p2_carlosdominguez;
 import java.util.Scanner;
 import java.util.Random;
@@ -28,8 +28,10 @@ public class Lab1P2_CarlosDominguez {
         // para el bubble sort me dio una idea 
         //usar la recursiva para recorrer las filas de la matriz 
         //y adentro del metodo hacer el swap para ordenar
-        
-        
+        int control_recursiva = tamaño-1;
+        // el -1 es para evitar que se salga de los bounds
+        matriz = Ordenamiento_filas(matriz,control_recursiva);
+
     }
     
     //llenado de la matriz con random
@@ -48,5 +50,30 @@ public class Lab1P2_CarlosDominguez {
             }
             System.out.println();
         }
+    }
+    public static int [][] Ordenamiento_filas (int [][] matriz,int CR){
+        int [] arreglo_temp = new int [matriz.length];
+        if (CR != 0) {
+            for (int i = 0; i < matriz.length; i++) {
+                arreglo_temp [i] = matriz[CR][i];
+            }
+            for (int i = 0; i < arreglo_temp.length; i++) {
+                for (int j = 0; j < arreglo_temp.length; j++) {
+                    if (arreglo_temp[j]>arreglo_temp[j+1]) {
+                        
+                    }
+                }
+            }
+            /*for (int i = 0; i < matriz.length; i++) {
+                if (i != 0 && i != matriz.length) {
+                    if (matriz[CR][i]>matriz[CR][i]) {
+                        
+                    }
+                }
+            }
+            */
+            Ordenamiento_filas(matriz,CR-1);
+        }
+        return matriz;
     }
 }
